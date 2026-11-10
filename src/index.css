@@ -1,0 +1,93 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');
+
+@theme {
+  --font-serif: "Lora", Georgia, serif;
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Source Sans 3", sans-serif;
+
+  --color-cream: #F0ECE8;
+  --color-brown: #341205;
+  --color-orange: #CE611A;
+  --color-bronze: #B57337;
+  --color-gray: #B9A193;
+  --color-brown-light: #6B3A1F;
+  --color-cream-dark: #E3DDD7;
+}
+
+:root {
+  --cream: #F0ECE8;
+  --brown: #341205;
+  --orange: #CE611A;
+  --bronze: #B57337;
+  --gray: #B9A193;
+  --white: #FFFFFF;
+  --brown-light: #6B3A1F;
+  --cream-dark: #E3DDD7;
+  --green: #2e7d32;
+  --font-size: 17px;
+}
+
+body {
+  background: var(--cream);
+  color: var(--brown);
+  font-family: var(--font-serif);
+  font-size: var(--font-size);
+  line-height: 1.88;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+@layer components {
+  .markdown-body p {
+    margin-bottom: 1.5rem;
+  }
+
+  .markdown-body p:first-of-type::first-letter {
+    font-family: var(--font-display);
+    font-size: 3.2em;
+    font-weight: 700;
+    float: left;
+    line-height: .82;
+    margin: 6px 8px 0 0;
+    color: var(--orange);
+  }
+}
+
+/* Animations from original code */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 20px 60px rgba(52,18,5,0.22); }
+  50% { box-shadow: 0 24px 70px rgba(206,97,26,0.35); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Flip Card Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
